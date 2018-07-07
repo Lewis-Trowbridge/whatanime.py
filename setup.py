@@ -8,7 +8,6 @@ setup(
     author="Lewis Trowbridge",
     author_email="lewbob9927@gmail.com",
     install_requires=[
-        "requests",
-        "base64"
+        "requests"
     ]
 )
