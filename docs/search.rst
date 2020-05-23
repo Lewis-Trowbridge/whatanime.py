@@ -1,7 +1,7 @@
 Search
 -------
 
-Returns a JSON of the Search request - https://soruly.github.io/whatanime.ga/#/?id=search
+Returns a JSON of the Search request - https://soruly.github.io/trace.moe/#/?id=search
 
 Parameters: Api_Token - (string), image - (base64 encoded image)
 
