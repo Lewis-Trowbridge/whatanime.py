@@ -1,4 +1,5 @@
 import requests
+from whatanime import exception as whatanimeexceptions
 
 
 def search(image, token=""):
@@ -14,12 +15,12 @@ def search(image, token=""):
     elif search_request.status_code == 403:
         raise ValueError("API token invalid")
     elif search_request.status_code == 413:
-        raise Exception("Image size is too large, please reduce the image size to below 10MB")
+        raise whatanimeexceptions.ImageSizeTooLargeError("Image size is too large, please reduce the image size to below 10MB")
     elif search_request.status_code == 429:
-        raise Exception("You have exceeded your quota. Please wait and try again soon.")
+        raise whatanimeexceptions.QuotaExceededError("You have exceeded your quota. Please wait and try again soon.")
     elif search_request.status_code == 500:
-        raise Exception("Something went wrong on the API end: error 500. This may be because the image is malformed.")
+        raise whatanimeexceptions.APIError("Something went wrong on the API's end: error 500. This may be because the image is malformed.")
     elif search_request.status_code == 503:
-        raise Exception("Something went wrong on the API end: error 503.")
+        raise whatanimeexceptions.APIError("Something went wrong on the API's end: error 503.")
 
 

@@ -9,4 +9,4 @@ def me(token=""):
     if r.status_code == 200:
         return r.json()
     if r.status_code == 403:
-        raise Exception("API token invalid")
+        raise ValueError("API token invalid")
